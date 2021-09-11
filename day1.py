@@ -1,3 +1,5 @@
+# Day 1: Basic constructs like data structure and loops[for and while]
+
 #### Task 1 STRING & INT ####
 print("####### String Length #######")
 s = 'my string' #Let's try to find the length of string
