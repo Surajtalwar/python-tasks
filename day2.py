@@ -1,4 +1,7 @@
 #Day 2: Functions, thier usage and Dictionaries
+# *args -> It deals with tuples
+# **kwargs -> It deals with dictonary
+# Point to note both works as Collector
 
 ############### Task 1 ###############
 print("############ TASK 1 ############")
@@ -20,12 +23,9 @@ print("############ TASK 2 ############")
 # ("Raul": 99),("avg_marks","55"),["Hidan", "Goku", "Timon", "Sasuke", "Saitama"]
 def my_result(**kwargs):
     max_marks=()
-    failed =[]
+    failed =[ i for i in kwargs if kwargs[i] < 65 ]
     max_marks=[(i, max(kwargs.values())) for i in kwargs if max(kwargs.values()) == kwargs[i]]
     avg_marks=("avg_marks:", str(sum(kwargs.values())/len(kwargs)))
-    for i in kwargs:
-        if kwargs[i] < 60:
-            failed.append(i)
     return f"{max_marks},{avg_marks},{failed}"
 
 print(my_result(raul=90,Hidan=50,Goku=30,Timon=50,Sasuke=60, Saitama=80))
