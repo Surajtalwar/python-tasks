@@ -79,5 +79,23 @@ a_dict = [
     
 ]
 
-for i in a_dict:
-    print(i, end="\n")
+def nested_list(list):
+    for l in list:
+        for k, v in l.items():
+            print("{0} : {1}".format(k, v))
+
+print(nested_list(a_dict))
+
+def get_user_values(a_dict):
+    count = 0
+    for i in a_dict:
+        # print(f"Printing the user number {count+1}")
+        for key, value in i.items():
+            if isinstance(value, list):
+                print("Friend List:")
+                nested_list(value)
+            else:
+                print(f"{key.title()}: {value}")
+        count += 1
+
+get_user_values(a_dict)
